@@ -2,16 +2,19 @@
 
 Proyecto Operaciones de ciberseguridad desarrollado desde cero.
 Se aplicara la documentacion del diseño, despliegue, automatizacion y gestion de controles de seguridad utilizando herramientas Open Source y estandares de la industria.
+<br>
 
 ## 🎯 Objetivo
 
 Demostrar el uso de la gestion de vulnerabilidades, monitoreo SIEM, proteccion de endpoints, gestion de identidades (IAM), y documentacion de evidencias para auditorias.
+<br>
 
 ## 🛠️ Herramientas Desplegadas
 
 * **SIEM / XDR:** Wazuh (Manager, Indexer, Dashboard) en Docker.
 * **Gestion de Vulnerabilidades:** Nessus Essentials (Docker).
 * **Sistemas Operativos:** Ubuntu Server (como Infraestructura), Linux Mint (como Agente / Endpoint).
+<br>
 
 ## 📂 Estructura del Proyecto
 
@@ -19,6 +22,7 @@ Demostrar el uso de la gestion de vulnerabilidades, monitoreo SIEM, proteccion d
 - `evidence/`: Capturas y evidencias organizadas por fases sanitizadas.
 - `scripts/`: Automatizaciones en Python/Bash.
 - `bitacoras/`: Plantillas operativas (.ods) y reportes.
+<br>
 
 ## 🚦 Fases del Proyecto
 
@@ -35,9 +39,11 @@ Demostrar el uso de la gestion de vulnerabilidades, monitoreo SIEM, proteccion d
 - **Fase 11:**
 - **Fase 12:**
 - **Fase 13:**
-
+<br>
 
 ## ⚖️ Licencia y Herramientas
 
 El contenido del repositorio esta bajo la licencia **MIT**.
 Las herramientas de terceros utilizadas manejan sus propias licencias.
+<br>
+
