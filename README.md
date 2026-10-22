@@ -4,6 +4,9 @@ Proyecto Operaciones de ciberseguridad desarrollado desde cero.
 Se aplicara la documentacion del diseño, despliegue, automatizacion y gestion de controles de seguridad utilizando herramientas Open Source y estandares de la industria.
 <br>
 
+
+
+
 ## 🎯 Objetivo
 
 Demostrar el uso de la gestion de vulnerabilidades, monitoreo SIEM, proteccion de endpoints, gestion de identidades (IAM), y documentacion de evidencias para auditorias.
