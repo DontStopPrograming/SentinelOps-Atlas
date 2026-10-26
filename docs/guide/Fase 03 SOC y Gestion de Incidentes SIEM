@@ -1,0 +1,16 @@
+# Fase 03: SOC y Gestion de Incidentes SIEM
+
+## 1. Simulacion de Ataque
+Se utilizo la herramienta `hydra` desde el servidor Ubuntu para simular un ataque de fuerza bruta SSH contra el endpoint Linux Mint
+
+**Comando ejecutado:**
+`hydra -l hackerfalso -P pass.txt ssh://IP -t 1 -W 2`
+
+## 2. Deteccion de Wazuh
+El agente de Linux Mint envio correctamente los logs de autenticacion (`auth.log`) al Manager de Wazuh.
+
+*  **Alerta detectada: ** Regla **5710** (sshd: Attempt to login using a non-existent user)
+*  **Nivel de severidad:** 5
+*  **Evidencia:** Se observaron multiples eventos desde la misma IP de origen, confirmando el intento de acceso no autorizado.
+
+  *La regla 5712 de correlacion de fuerza bruta no se disparo por una limitacion del motor `wazuh-analysisd` al procesar eventos masivos rapidos.* 
