@@ -16,8 +16,8 @@ El agente de Linux Mint envio correctamente los logs de autenticacion (`auth.log
   *La regla 5712 de correlacion de fuerza bruta no se disparo por una limitacion del motor `wazuh-analysisd` al procesar eventos masivos rapidos.* 
 
 **Ataque de Fuerza Bruta:**
-![Ejecucion de Hydra](../../evidence/fase-03/capturas/hydra.JPG)
+![Ejecucion de Hydra](../evidence/fase-03/capturas/hydra.JPG)
 
 **Deteccion de la Alerta:**
-![Alerta en Wazuh](../../evidence/fase-03/capturas/hydra-wazuh.JPG)
+![Alerta en Wazuh](../evidence/fase-03/capturas/hydra-wazuh.JPG)
 
