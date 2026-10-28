@@ -6,6 +6,7 @@ Se desplego un servidor de Velociraptor en Docker y se instalo su agente en el e
 
 ## 2. Prueba de Concepto (PoC) - Consulta VQL Real
 Se conecto exitosamente el agente `shaka-VirtualBox` al servidor. Utilizando la interfaz de "VQL Drilldown", se ejecuto la siguiente consulta para extraer la lista de procesos en vivo:
+<br>
 `SELECT Name, Pid, Username, CommandLine FROM pslist()`
 <br><br><br>
 
