@@ -2,22 +2,24 @@
 
 ## 1. Simulacion de Ataque
 Se utilizo la herramienta `hydra` desde el servidor Ubuntu para simular un ataque de fuerza bruta SSH contra el endpoint Linux Mint
-
+<br>
 **Comando ejecutado:**
 `hydra -l hackerfalso -P pass.txt ssh://IP -t 1 -W 2`
+<br><br><br>
 
 ## 2. Deteccion de Wazuh
 El agente de Linux Mint envio correctamente los logs de autenticacion (`auth.log`) al Manager de Wazuh.
-
+<br>
 *  **Alerta detectada: ** Regla **5710** (sshd: Attempt to login using a non-existent user)
 *  **Nivel de severidad:** 5
 *  **Evidencia:** Se observaron multiples eventos desde la misma IP de origen, confirmando el intento de acceso no autorizado.
-
+<br>
   *La regla 5712 de correlacion de fuerza bruta no se disparo por una limitacion del motor `wazuh-analysisd` al procesar eventos masivos rapidos.* 
+<br><br><br>
 
 **Ataque de Fuerza Bruta:**
-![Ejecucion de Hydra](../evidence/fase-03/capturas/hydra.JPG)
+![Ejecucion de Hydra](../../evidence/fase-03/capturas/hydra.JPG)
 
 **Deteccion de la Alerta:**
-![Alerta en Wazuh](../evidence/fase-03/capturas/hydra-wazuh.JPG)
+![Alerta en Wazuh](../../evidence/fase-03/capturas/hydra-wazuh.JPG)
 
