@@ -13,6 +13,7 @@ Wazuh detecto el cambio de integridad y disparo la alerta:
 * **Regla:** 550 (Integrity checksum changed)
 * **Nivel:** 7.
 * **Dato capturado:** El campo `syscheck.diff` registro el numero de tarjeta, demostrando la capacidad del SIEM para identificar datos sensibles en el sistema.
+<br><br><br>
 
 * **Evidencia:**
 ![Alerta DLP en Wazuh](../../evidence/fase-04/capturas/DLP.JPG)
