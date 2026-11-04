@@ -34,7 +34,7 @@ Demostrar el uso de la gestion de vulnerabilidades, monitoreo SIEM, proteccion d
 - **Fase 03:** SOC y gestion de incidentes SIEM
 - **Fase 04:** DLP y proteccion de datos
 - **Fase 05:** Gestion de Endpoints y Salud de Controles
-- **Fase 06:**
+- **Fase 06:** Línea Base de Seguridad
 - **Fase 07:**
 - **Fase 08:**
 - **Fase 09:**
