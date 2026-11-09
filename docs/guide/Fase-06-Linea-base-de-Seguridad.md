@@ -10,3 +10,5 @@ Como alternativa valida y compatible, se utilizo **Lynis**, una herramienta de a
 ```bash
   sudo lynis audit system
 ```
+
+![Auditoria inicial](../../evidence/fase-06/capturas/Lynis-audit.JPG)
