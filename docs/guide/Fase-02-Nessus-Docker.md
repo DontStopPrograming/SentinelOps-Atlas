@@ -16,7 +16,7 @@ Se configuro un "Basic Network Scan" apuntando a la IP de la maquina Linux Mint 
 ## 4. Escaneo Autenticado
 Para realizar una evaluacion interna real, se preparo en el endpoint Linux Mint creando un usuario con permisos de escalada y se configuraron las credenciales SSH en Nessus.
 
-**Comandos ejecutadoe en el L. Mint:**
+**Comandos ejecutados en el L. Mint:**
 ```bash
 sudo useradd -m -s /bin/bash user_01
 sudo usermod -aG sudo user_01
