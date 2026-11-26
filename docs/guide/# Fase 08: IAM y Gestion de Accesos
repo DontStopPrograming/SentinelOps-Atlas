@@ -1,0 +1,57 @@
+## 1. Despliegue de Keycloak
+Se desplego Keycloak en Docker sobre el servidor Ubuntu, utilizando la imagen oficial. Para garantizar la persistencia de los datos (realms, usuarios y configuraciones), se montaron volumenes para los datos y los logs:
+
+```bash
+  docker run -d --name keycloak -p 8080:8080 \
+  -v ~/keycloak-logs:/opt/keycloak/logs \
+  -v ~/keycloak-data:/opt/keycloak/data \
+  -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
+  -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
+  quay.io/keycloak/keycloak:26.6.3 start-dev
+```
+
+<br><br><br>
+
+## 2. Configuracion del Realm
+Se creo un realm dedicado llamado sentinelops para aislar la organizacion del ream maestro de administracion.
+<br><br><br>
+
+## 3. Gestion de identidades y Roles
+Se creo el usuario **analista_prueba** y se le asigno el rol **analista_soc** para simular los permisos de un analista en el SOC
+
+Usuario: **analista_prueba**
+Rol: **analista_soc**
+Contraseña: **Password123!**
+
+<br><br><br>
+
+## 4. Configuracion de MFA
+Se habilito la autenticacion de doble factor obligatoria (OTP) mediante la accion Configure OTP
+
+- Se configuro la politica TOTP con 6 digitos y periodo de 30 segundos
+- Se ajusto el Look around window a 3 para evitar problemas de sincronizacion de tiempo
+
+**Evidencia MFA:**
+![Analista prueba](../../evidence/fase-08/capturas/Analista_prueba.JPG)
+
+## 5. Resolucion de Incidencias
+Durante las pruebas de login, se detectaron dos problemas que se resolvieron con exito:
+
+- Bucle en la configuracion del OTP: Keycloak solicitaba el QR una y otra vez. Se soluciono modificando el flujo reset credentials, cambiando la accion Reset OTP a "Remove all" y limpiando las acciones requeridas en el perfil del usuario
+- Perdida de datos al recrear el contenedor: Al reiniciar el contenedor sin un volumen persistente, se perdio el realm y el usuario. Se corrigio montando el volumen **~/keycloak-data** y recreando el realm. Esto demuestra la importancia de la persistencia en Docker
+<br>
+
+![Analista SOC](../../evidence/fase-08/capturas/Analista_SOC.JPG)
+
+<br><br><br>
+
+## 6. Integracion con el SIEM
+Se configuro Keycloak para emitir eventos de autenticacion (LOGIN, LOGIN_ERROR, UPDATE_PASSWORD) y se monto el log en el manager de Wazuh mediante un volumen de Docker. Wazuh correlaciona los eventos de identidad con eventos de red y endpoints.
+<br><br><br>
+
+## 7. Simulacion de Baja
+Se deshabilito el usuario interruptor Enabled en Off para simular el cierre de la cuenta de un empleado
+
+
+
+
